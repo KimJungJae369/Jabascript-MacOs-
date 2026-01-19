@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할당 연산자</title>
+</head>
+<body>
+
+    <!-- 
+        할당 연산자
+        = 우항에 있는 피연산자의 평가 결과를 좌황에 있는 변수에 할당
+        = 좌항의 변수에 값을 할당하므로 변수 값이 변하는 부수 효과(부작용)가 있다
+        = 할당문은 값으로 평가되는 표현식인 문으로서 할당된 값으로 평가
+        = 할당문을 다른 변수에 할당할 수 있다
+        = 이러한 특징을 활용해 여러 변수에 동일한 값을 연쇄 할당할 수 있다
+    -->
+    
+    <script>
+        var x;
+
+        x = 10;
+        console.log(x); // 10
+
+        x += 5
+        console.log(x); // 15
+
+        x -= 3;
+        console.log(x); // 12
+
+        x *= 2;
+        console.log(x); // 24
+
+        x /= 4;
+        console.log(x); // 6
+
+        x %= 4;
+        console.log(x); // 2
+
+        // 문자열 연결 연산자
+        var str = 'Kim';
+        str += 'Lee';
+        console.log(str); // KimLee
+
+
+        // 연쇄 할당
+        var a, b, c;
+        a = b = c = 5;
+        console.log(a,b,c); // 5 5 5
+    </script>
+</body>
+</html>
