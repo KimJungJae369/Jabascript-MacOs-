@@ -17,28 +17,48 @@
     -->
 
     <script>
-        const counter = document.querySelector('#counter'); 
-        // 에러요소 : counter-00 -> counter
-        // 에러원인 : id속성값이 틀림
-        // 해결방법 : id속성값을 정확히 입력
-        const increase = document.querySelector('#increase');
-        const decrease = document.querySelector('#decrease');
+        // const counter = document.querySelector('#counter'); 
+        // // 에러요소 : counter-00 -> counter
+        // // 에러원인 : id속성값이 틀림
+        // // 해결방법 : id속성값을 정확히 입력
+        // const increase = document.querySelector('#increase');
+        // const decrease = document.querySelector('#decrease');
 
 
-        let num = 0; // 변수선언과 동시에 초기화
-        const render = function(){counter.innerHTML = num;}; // 렌더링 함수, num값을 counter에 렌더링, 함수 선언과 동시에 초기화
+        // let num = 0; // 변수선언과 동시에 초기화
+        // const render = function(){counter.innerHTML = num;}; // 렌더링 함수, num값을 counter에 렌더링, 함수 선언과 동시에 초기화
 
-        increase.onclick = function(){ // 'increase'클릭 이벤트 준비
-            // onclick : 클릭 이벤트 핸들러
-            num++; // 'increase'을 클릭하면 num값 1증가
-            console.log('increase 클릭됨', num); // 디버깅용 로그, num값 출력
-            render(); // 렌더링 함수 호출, 
+        // increase.onclick = function(){ // 'increase'클릭 이벤트 준비
+        //     // onclick : 클릭 이벤트 핸들러
+        //     num++; // 'increase'을 클릭하면 num값 1증가
+        //     console.log('increase 클릭됨', num); // 디버깅용 로그, num값 출력
+        //     render(); // 렌더링 함수 호출, 
+        // }
+
+        // decrease.onclick = function(){ // 'decrease'클릭 이벤트 준비
+        //     num--; // 'decrease'을 클릭하면 num값 1감소
+        //     console.log('decrease 클릭됨', num); // 디버깅()용 로그, num값 출력
+        //     render(); // 렌더링 함수 호출
+        // }
+
+        const counter = document.querySelector('#counter')
+        const increase = document.querySelector('#increase')
+        const decrease = document.querySelector('#decrease')
+
+        let num = 0;
+        const result = function(){counter.innerHTML = num}
+
+        increase.onclick = function(){
+            num++;
+            console.log('increase 클릭됨', num);
+            result();
         }
 
-        decrease.onclick = function(){ // 'decrease'클릭 이벤트 준비
-            num--; // 'decrease'을 클릭하면 num값 1감소
-            console.log('decrease 클릭됨', num); // 디버깅()용 로그, num값 출력
-            render(); // 렌더링 함수 호출
+
+        decrease.onclick = function(){
+            num--;
+            console.log('decrease 클릭됨', num);
+            result();
         }
     </script>
     
