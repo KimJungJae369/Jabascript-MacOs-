@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지수 연산자</title>
+</head>
+<body>
+
+    <!-- 
+        지수 연산자
+        = 좌항의 피연사자를 밑으로 우항의 피연산자를 지수로 거듭 제곱하여 숫자 값을 반환
+            2 ** 2 // 2의 2승 -> 4
+            2 ** 3 // 2의 3승 -> 8
+            2 ** 2.5 // 2의 2.5승 -> 5.656854249492381
+            2 ** 0 // 2의 0승 -> 1
+
+        = 지수 연산자가 도입되기 전에는 'Math.pow()'메서드를 사용
+            Math.pow(2, 2) // 2의 2승 -> 4
+            Math.pow(2, 3) // 2의 3승 -> 8
+            Math.pow(2, 2.5) // 2의 2.5승 -> 5.656854249492381
+            Math.pow(2, 0) // 2의 0승 -> 1
+
+        = 지수 연산자는 Math.pow() 메서드보다 가독성이 좋다
+        = 음수를 거듭제곱의 밑으로 사용해 계산하려면 다음과 같이 괄호를 사용
+            -2 ** 2 // SyntaxError: Unary negation operator '-' cannot be applied to the result of a binary exponentiation operator '**'
+            (-2) ** 2 // 4
+
+        = 지수 연산자는 다른 산술 연산자와 마찬가지로 할당 연산자와 함께 사용할 수 있다
+            let num = 2;
+            num **= 3; // num = num ** 3과 동일 -> num은 8이 된다
+
+        = 지수 연산자는 이항 산술 연산자 중에서 우선순위가 가장 높다
+            2 * 5 ** 2 // 2 * (5 ** 2) -> 50
+    -->
+    
+</body>
+</html>
