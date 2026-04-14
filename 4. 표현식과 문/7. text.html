@@ -7,24 +7,29 @@
 </head>
 <body>
 
+    <!-- 
+        리터럴 : 값 자체를 의미하는 표현식
+        표현식 : 하나의 값(숫자, 문자열 등)으로 평가되는 문장
+        - 삼항 연산자는 표현식입니다. 조건에 따라 다른 문자열을 생성하여 message 변수에 할당합니다
+        - 표현식이 아닌 문 : 조건문은 값으로 평가되지 않으므로 표현식이 아닌 문입니다
+        세미클론 : 문장의 끝을 나타내는 구분자
+        표현식문과 아닌 문 : 표현식문은 하나의 값으로 평가되는 문장 표현식이 아닌 문은 하나의 값으로 평가되지 않는 문장입니다
+    -->
+
     <script>
-        // 리터럴
-        var number = 5;
-        var string = 'Hello, World!';        
+        // 어떤 로그인 API에서 결과를 받아서 처리하는 코드
+        let isLoggedIn = true;
+        let userName = 'John Doe';
 
-        // 표현식
-        var a = 5;
-        var b = 10;
-        var result = a + b;
-        console.log(result)
+        // ✅ 표현식 (값 생성)
+        let message = isLoggedIn ? `${userName}님 환영합니다` : '로그인 실패'; // 삼항 연산자는 표현식입니다. 조건에 따라 다른 문자열을 생성하여 message 변수에 할당합니다
+        console.log(message);
 
-        // 세미클론
-        var c = 5;
-        c = 15;
-
-        // 표현식문과 아닌 문
-        var x = y;
-        x = 100;
+        // ✅ 문 (추가 동작)
+        let lastLoginMessage;
+        if (isLoggedIn) { // 표현식이 아닌 문 : 조건문은 값으로 평가되지 않으므로 표현식이 아닌 문입니다
+            lastLoginMessage = '마지막 로그인 성공';
+        }
     </script>
     
 </body>

@@ -53,53 +53,30 @@
 
 
     <script>
-        var num = 2;
-        var kind;
+     let totalPurchase = 175000;
+    let isMember = true;
 
-        // if문
-        if(num > 0){ 
-            kind = '양수'
-        }
-        console.log(kind); // 양수
+    let grade;
 
-        // if..else문
-        if(num > 0){ 
-            kind = '양수';
-        } else {
-            kind = '음수';
-        }
-        console.log(kind); // 양수
+    if (isMember && totalPurchase >= 100000) {
+        grade = 'VIP';
+    } else if (isMember && totalPurchase >= 50000) {
+        grade = 'GOLD';
+    } else if (isMember && totalPurchase >= 10000) {
+        grade = 'SILVER';
+    } else {
+        grade = 'GUEST';
+    }
 
-        // if..else if..else문
-        if(num > 0){
-            kind = '양수';
-        } else if(num < 0){
-            kind = '음수';
-        } else {
-            kind = '영';
-        }
-        console.log(kind); // 양수
+    console.log(`회원 등급: ${grade}`);
 
+    // 추가 미션
+    if (grade === 'VIP') {
+        console.log('무료 배송 대상입니다');
+    }
 
-        // if..else문과 삼항 조건 연산자
-        var x = 2
-        var result;
-
-        if(x % 2){ // 2 % 2는 0이다 0은 false로 암묵적 강제 변화
-            result = '홀수';
-        } else {
-            result = '짝수';
-        }
-        console.log(result); // 짝수
-
-        // 삼항 조건 연산자
-        // 0 = false / 1 = true
-        result = (x % 2) ? '홀수' : '짝수';
-        console.log(result); // 짝수
-
-        // 중첩된 삼항 조건 연산자
-        var kind = num ? (num > 0 ? '양수' : '음수') : '영';
-        console.log(kind); // 양수
+    const result = isMember && totalPurchase >= 100000 ? 'VIP' : isMember && totalPurchase >= 50000 ? 'GOLD' : isMember && totalPurchase >= 10000 ? 'SILVER' : 'GUEST';
+    console.log(result);
     </script>
     
 </body>

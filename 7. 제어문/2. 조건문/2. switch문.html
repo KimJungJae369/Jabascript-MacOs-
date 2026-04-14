@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+<body>
+
+    <!-- 
+        switch 문
+        = 주어진 표현식을 평가하여 그 값과 일치하는 표현식을 갖는 case 문으로 실행 흐름을 옮긴다
+        = case 문은 '상황'을 의미하는 표현식을 지정하고 콜론으로 마친다
+        = 그리고 그 뒤에 실행할 문들을 위치시킨다
+        = switch 문의 표현식과 일치하는 case 문이 없다면 실행 순서는 default 문으로 이동
+        = default 문은 선택 사항으로 사용할 수도 있고 사용하지 않을 수고 있다
+            switch (표현식) {
+                case 표현식1 : 
+                    실행문1;
+                    break;
+
+                case 표현식2 :
+                    실행문2;
+                    break;
+
+                default :
+                    실행문3;
+            }
+
+        = if 문의 조건식을 불리언 값으로 평가되어야 하지만 switch 문의 표현식은 불리언 값보다는 문자열이나 숫자 값인 경우가 많다
+        = if 문은 논리적 참/거짓으로 실행할 코드 블록을 결정
+        = switch 문은 논리적 참/거짓보다는 다양한 상황에 따라 실행할 코드 블록을 결정
+
+        ex_1) 잘못된 switch 문
+            var month = 11;
+            var monthName;
+
+            switch(month){
+                case 1 : monthName = 'January';
+                case 2 : monthName = 'February';
+                case 3 : monthName = 'March';
+                case 4 : monthName = 'April';
+                case 5 : monthName = 'May';
+                case 6 : monthName = 'June';
+                case 7 : monthName = 'July';
+                case 8 : monthName = 'August';
+                case 9 : monthName = 'September';
+                case 10 : monthName = 'October';
+                case 11 : monthName = 'November';
+                case 12 : monthName = 'December';
+                default : monthName = 'Invalid month';  
+            }
+            console.log(monthName); // Invalid month
+        
+        = switch 문의 표현식의 평가 결과와 일치하는 case 문으로 실행 흐름이 이동하여 문을 실행한 것은 맞지만 문을 실행한 후 switch 문을 탈출하지 않고 
+        switch 문이 끝날 때가지 이후의 모든 case 문과 default 문을 실행했기 때문 : 폴스루(fall-through)
+        = 다시 말해 monthName 변수 'November'가 할당한 후 switch 문을 탈출하지 않고 연이어 'December'와 'Invalid month'가 할당된 것이다
+        = 이러한 결과 나온 이유는 case문은 해당하는 문의 마지막에 break 문이 없기 때문이다
+        = break 문은 switch 문을 탈출하는 역할을 한다
+        = break 문이 없다면 case 문의 표현식과 일치하지 않더라도 실행 흐름이 다음 case 문으로 연이어 이동
+
+            ex_2) 올바른 switch 문
+                var month = 11;
+                var monthName;
+
+                switch(month){
+                    case 1 : monthName = 'January'; break;
+                    case 2 : monthName = 'February'; break;
+                    case 3 : monthName = 'March'; break;
+                    case 4 : monthName = 'April'; break;
+                    case 5 : monthName = 'May'; break;
+                    case 6 : monthName = 'June'; break;
+                    case 7 : monthName = 'July'; break;
+                    case 8 : monthName = 'August'; break;
+                    case 9 : monthName = 'September'; break;
+                    case 10 : monthName = 'October'; break;
+                    case 11 : monthName = 'November'; break;
+                    case 12 : monthName = 'December'; break;
+                    default : monthName = 'Invalid month'; 
+                }
+                console.log(monthName); // November
+        
+        = default 문에는 break 문이 없어도 되지만 default 문이 switch 문의 마지막에 위치하는 것이 일반적이다
+        = default 문은 switch 문의 맨 마지막에 위치하므로 default 문의 실행이 종료되면 switch 문을 빠져나간다
+
+            ex_3) '폴스루'가 유용한 경우
+                switch(month){
+                case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 :
+                    days = 31;
+                    break;
+                case 4 : case 6 : case 9 : case 11 :
+                    days = 30;
+                    break;
+                case 2 :
+                    days = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+                    break;
+                default :
+                    console.log('Invalid month');   
+            }
+            console.log(days); // 29
+        
+        = switch 문은 case, default, break 등 다양한 키워드를 사용해야 하고 '폴스루'가 발생하는 등 문법도 복잡하다 
+        = 따라서 C 언어를 기반으로 하는 프로그래밍 언어(C++, Java, C#, JavaScript 등)는 대부분 switch 문을 지원하지만 파이썬 같이 switch 문을 
+        지원하지 않는 프로그래밍 언어도 있다
+        = 만약 if문으로 해결할 수 있다면 switch 문보다는 if문을 사용
+        = 하지만 조건이 너무 많아서 if 문으로 해결하기 어렵다면 switch 문을 사용
+    -->
+
+    <script>
+        // var month = 11;
+        // var monthName;
+
+        // switch(month){
+        //     case 1 : monthName = 'January'; break;
+        //     case 2 : monthName = 'February'; break;
+        //     case 3 : monthName = 'March'; break;
+        //     case 4 : monthName = 'April'; break;
+        //     case 5 : monthName = 'May'; break;
+        //     case 6 : monthName = 'June'; break;
+        //     case 7 : monthName = 'July'; break;
+        //     case 8 : monthName = 'August'; break;
+        //     case 9 : monthName = 'September'; break;
+        //     case 10 : monthName = 'October'; break;
+        //     case 11 : monthName = 'November'; break;
+        //     case 12 : monthName = 'December'; break;
+        //     default : monthName = 'Invalid month'; 
+        // }
+        // console.log(monthName); // November
+
+        var year = 2000; // 2000년은 윤년으로 2월이 29일까지 있다
+        var month = 2;
+        var days = 0;
+
+        switch(month){
+            case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 :
+                days = 31;
+                break;
+            case 4 : case 6 : case 9 : case 11 :
+                days = 30;
+                break;
+            case 2 :
+                days = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0 ? 29 : 28;
+                break;
+            default :
+                console.log('Invalid month');   
+        }
+        console.log(days); // 29
+    </script>
+    
+</body>
+</html>

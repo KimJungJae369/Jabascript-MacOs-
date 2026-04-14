@@ -7,30 +7,26 @@
 </head>
 <body>
 
+    <!-- 
+        isNaN : 값이 NaN인지 판별하는 함수
+        - NaN : Not a Number의 약자로 숫자가 아님을 나타내는 특별한 값
+    -->
+
     <script>
-        // 숫자 타입
-        var numberA = 10; // 정수
-        var numberB = 10.314; // 실수
+        let inputPrice = "10000";
+        let bonus = 2000;
+        // let totalPrice = price + bonus; // price가 NaN인 경우, totalPrice도 NaN이 된다
 
-        // 문자열 타입
-        var stringA = "Hello, World!"; // 큰따옴표
-        var stringB = 'Hello, World!'; // 작은따옴표
-        var stringC = `Hello, World!`; // 백틱 (템플릿 리터럴)
-
-
-        // 불리언 타입
-        var trueResult = true
-        var falseResult = false
-
-        // 특수 타입
-        console.log(undefinedValue); // undefined
-        var undefinedValue = 10
-        undefinedValue = null;
-        console.log(undefinedValue) // null
-
-        // 템플릿 리터럴
-        var name = "홍길동"
-        var stringName = `안녕하세요 ${name}님 환영합니다`
+        // 타입 변환
+        let price = Number(inputPrice);
+        let totalPrice = price + bonus; // price가 NaN인 경우, totalPrice도 NaN이 된다
+        
+        // 유효성 검사
+        if (isNaN(price)) { // price가 NaN인 경우, 즉 유효한 숫자가 아닌 경우
+            console.log("잘못된 입력입니다");
+        } else {
+            console.log(`총 결제 금액: ${totalPrice}원`);
+        }
     </script>
     
 </body>

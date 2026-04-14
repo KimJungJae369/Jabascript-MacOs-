@@ -14,6 +14,7 @@
     <!-- 
         디버깅 : 에러 메시지를 확인하고 에러가 발생한 원인을 제거
         렌더링 : 컴퓨터가 이해하는 언어(코드,데이터)를 사람이 볼 수 있는 형태(화면,그림,글자)로 바꾸는 것 / 동영상,이미지,애니메이션이 렌더링 되는 과정
+        innerHTML : HTML 요소의 콘텐츠를 가져오거나 설정하는 속성, 요소 내부의 HTML을 읽거나 변경할 때 사용 
     -->
 
     <script>
@@ -46,17 +47,17 @@
         const decrease = document.querySelector('#decrease')
 
         let num = 0;
-        const result = function(){counter.innerHTML = num}
+        const result = function(){counter.innerHTML = num} 
 
         increase.onclick = function(){
-            num++
-            console.log('increase 클릭됨', num)
+            num++;
+            console.log('increase 클릭됨', num);
             result();
         }
 
         decrease.onclick = function(){
-            num--
-            console.log('decrease 클릭됨', num)
+            num--;
+            console.log('decrease 클릭됨', num);
             result();
         }
     </script>

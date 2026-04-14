@@ -8,34 +8,23 @@
 <body>
 
     <script>
-        // 산술 연산자
-        var pusResult = 5 + 2; 
-        var minusResult = 5 - 2;
-        var multipleResult = 5 * 2;
-        var divisionResult = 5 / 2;
-        var remainderResult = 5 % 2;
-        var exponentiationResult = 5 ** 2;
+        let isMember = false;
+        let totalPrice = 30000;
+        let coupon = "DISCOUNT";
 
-        // 비교 연산자
-        var equalResult = 5 == '5'; // true : 동등 비교 연산자
-        var notEqualResult = 5 != '5'; // false : 부등 비교 연산자
+        // ✅ 핵심: 조건 판단 (연산자 사용)
+        let isDiscount = isMember === true || totalPrice <= 50000 || coupon !== null;
+        // isMember가 true이거나, totalPrice가 50000 이하이거나, coupon이 null이 아니면 할인 적용
 
-        var strictEqualResult = 5 === '5'; // false : 일치 비교 연산자
-        var strictNotEqualResult = 5 !== '5'; // true : 불일치 비교 연산자
+        // 출력
+        console.log(`할인 적용 여부: ${isDiscount}`);
 
-        // 논리 연산자
-        var andResult = true && false; // false : 논리곱 연산자
-        var orResult = true || false; // true : 논리합 연산자
-        var notResult = !true; // false : 논리 부정 연산자
-
-        // typeof 연산자
-        var typeOfNumber = typeof 10; // 'number'
-        var typeOfString = typeof "Hello"; // 'string'
-        var typeOfBoolean = typeof true; // 'boolean'
-        var typeOfUndefined = typeof undefined; // 'undefined'
-        var typeOfNull = typeof null; // 'object' (자바스크립트의 역사적 이유로 null의 타입이 object로 나옴)
-        var typeOfObject = typeof { name: "홍길동" }; // 'object'
-        var typeOfFunction = typeof function() {}; // 'function'
+        // 추가 미션
+        if (isDiscount) {
+            console.log("할인 적용됨");
+        } else {
+            console.log("할인 없음");
+        }
     </script>
     
     
