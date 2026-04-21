@@ -9,35 +9,38 @@
 
     <!-- 
         var 
-        = 재할당/재선언/호이스트 모두 가능하다
-        = 하지만 복잡한 코드에서 사용을 하지 않는 것이 좋다
+        = 재할당/재선언/호이스팅 모두 가능하다
+        = var는 코드에서 사용을 하지 않는 것이 좋다
 
         let 
         = 재할당은 가능하지만, 재선언이 불가능하다
-        = 호이스팅이 일어나지만, TDZ(Temporal Dead Zone) 때문에 오류가 발생한다
+        = 호이스팅은 일어나지만, TDZ(Temporal Dead Zone) 때문에 오류가 발생한다
         = let이 호이스팅이 발생하면 let 선언문 전체가 TDZ에 빠지게 된다
         TDZ : 변수의 유효 범위가 시작되는 시점부터 변수 선언이 실행되기 전까지의 영역
 
         const 
         = 재할당/재선언 모두 불가능하다
         = 호이스팅이 일어나지만, TDZ 때문에 오류가 발생한다
+        = 객체의 내부 값, 배열 요소 변경은 가능하지만 변수에 대한 재할당은 불가능하다
+        ex)
+        const user = { name: 'Alice' };
+        user.name = 'Bob'; // 객체 내부 값 변경은 가능
+        user = { name: 'Charlie' }; // 오류 발생, 변수에 대한 재할당은 불가능
     -->
 
     <script>
-        // 10% 할인 이벤트
-        let price = 12000;
-        let quantity = 5;
-        let total = price * quantity;
-        let discount = 0;
-        if (total >= 50000) {
-            discount = total * 0.1;
+
+        
+        let name = 'Alice';
+
+        function printUserName(){
+            const localUserName = 'Bob';
+            console.log(localUserName);
         }
+        printUserName();
 
-        let finalPrice = total - discount;
-
-        console.log(`총 금액: ${total}원`);
-        console.log(`할인 금액: ${discount}원`);
-        console.log(`최종 결제 금액: ${finalPrice}원`);
+        name = 'Charlie';
+        console.log(name);
     </script>
     
 </body>

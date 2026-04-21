@@ -13,20 +13,36 @@
     -->
 
     <script>
-        let inputPrice = "10000";
-        let bonus = 2000;
-        // let totalPrice = price + bonus; // price가 NaN인 경우, totalPrice도 NaN이 된다
+        // 사용자 객체 생성
+        const user = {
+            name : '홍길동',
+            age : 30,
+            isLoggedIn : true
+        } 
 
-        // 타입 변환
-        let price = Number(inputPrice);
-        let totalPrice = price + bonus; // price가 NaN인 경우, totalPrice도 NaN이 된다
-        
-        // 유효성 검사
-        if (isNaN(price)) { // price가 NaN인 경우, 즉 유효한 숫자가 아닌 경우
-            console.log("잘못된 입력입니다");
-        } else {
-            console.log(`총 결제 금액: ${totalPrice}원`);
-        }
+        // 템플릿 리터럴 출력
+        console.log(`${user.name} - ${user.age}`); // 홍길동 - 30
+
+        // 존재하지 않는 값 -> undefined
+        console.log(user.address); // undefined
+
+        // 일부 값 -> null로 의도적 초기화
+        console.log(user.isLoggedIn); // true
+        user.isLoggedIn = null;
+        console.log(user.isLoggedIn); // null
+
+        // 심벌을 사용해서 유일한 키 하나 추가
+        const userId = Symbol('id');
+        console.log(typeof userId); // symbol
+        user[userId] = 'user1';
+        console.log(user[userId]); // user1
+
+        // 변수 하나 만들기 : 처음엔 숫자, 나중에  문자열로 변경(동적 타이핑)
+        let variable = 123;
+        console.log(variable); // 123
+
+        variable = '문자열로 변경';
+        console.log(variable); // 문자열로 변경
     </script>
     
 </body>

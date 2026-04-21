@@ -22,7 +22,7 @@
                 // 조건식이 false일 때 실행할 코드 블록
             }
         
-        = if문의 존건식은 블리언 값으로 평가
+        = if문의 조건식은 블리언 값으로 평가
         = 만약 if 문의 조건식이 불리언 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 암묵적으로 불리언 값으로 강제 변환되어 실행할 코드 블록을 결정
         = 조건식을 추가하여 조건에 따라 실행될 코드 블록을 늘리고 싶으면 'else if'문을 사용
             ex)
@@ -53,30 +53,51 @@
 
 
     <script>
-     let totalPurchase = 175000;
+    // let totalPurchase = 175000;
+    // let isMember = true;
+
+    // let grade; // 회원 등급을 저장할 변수
+
+    // if (isMember && totalPurchase >= 100000) {
+    //     grade = 'VIP';
+    // } else if (isMember && totalPurchase >= 50000) {
+    //     grade = 'GOLD';
+    // } else if (isMember && totalPurchase >= 10000) {
+    //     grade = 'SILVER';
+    // } else {
+    //     grade = 'GUEST';
+    // }
+
+    // console.log(`회원 등급: ${grade}`);
+
+    // // 추가 미션
+    // if (grade === 'VIP') {
+    //     console.log('무료 배송 대상입니다');
+    // }
+
+    // const result = isMember && totalPurchase >= 100000 ? 'VIP' : isMember && totalPurchase >= 50000 ? 'GOLD' : isMember && totalPurchase >= 10000 ? 'SILVER' : 'GUEST';
+    // console.log(result);
+
+    let totalPurchase = 175000;
     let isMember = true;
 
     let grade;
 
-    if (isMember && totalPurchase >= 100000) {
+    if(isMember && totalPurchase >= 100000){
         grade = 'VIP';
-    } else if (isMember && totalPurchase >= 50000) {
-        grade = 'GOLD';
-    } else if (isMember && totalPurchase >= 10000) {
-        grade = 'SILVER';
-    } else {
-        grade = 'GUEST';
+    }else if(isMember && totalPurchase >= 50000){
+        grade = 'GOLD'
+    }else if(isMember && totalPurchase >= 10000){
+        grade = 'SILVER'
+    }else{
+        grade = 'GUSET'
     }
+    console.log(`회원 등급은 ${grade}입니다`)
 
-    console.log(`회원 등급: ${grade}`);
-
-    // 추가 미션
-    if (grade === 'VIP') {
-        console.log('무료 배송 대상입니다');
-    }
-
-    const result = isMember && totalPurchase >= 100000 ? 'VIP' : isMember && totalPurchase >= 50000 ? 'GOLD' : isMember && totalPurchase >= 10000 ? 'SILVER' : 'GUEST';
-    console.log(result);
+    const result = isMember && totalPurchase >= 100000 ? grade = 'VIP' 
+    : isMember && totalPurchase >= 50000 ? grade = 'GOLD'
+    : isMember && totalPurchase >= 10000 ? grade = 'SILVER' : grade = 'GUSET'
+    console.log(`회원 등급은 ${result}입니다`)
     </script>
     
 </body>

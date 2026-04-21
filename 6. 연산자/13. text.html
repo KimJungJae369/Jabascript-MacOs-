@@ -8,23 +8,36 @@
 <body>
 
     <script>
-        let isMember = false;
-        let totalPrice = 30000;
-        let coupon = "DISCOUNT";
+        // 변수 3개 생성(문자, 숫자, 블리언) 
+        let str = '10';
+        let num = 5;
+        let bool = false;
 
-        // ✅ 핵심: 조건 판단 (연산자 사용)
-        let isDiscount = isMember === true || totalPrice <= 50000 || coupon !== null;
-        // isMember가 true이거나, totalPrice가 50000 이하이거나, coupon이 null이 아니면 할인 적용
+        // 콘솔에 출력
+        // 1 문자 + 숫자
+        console.log(str + num); // 105
 
-        // 출력
-        console.log(`할인 적용 여부: ${isDiscount}`);
+        // 2. 문자 - 숫자
+        console.log(str - num); // 5, 문자열이 숫자로 암묵적 타입 변환이 일어나서 계산이 가능하다(- : 연산자는 문자열을 숫자로 변환한다)
 
-        // 추가 미션
-        if (isDiscount) {
-            console.log("할인 적용됨");
-        } else {
-            console.log("할인 없음");
-        }
+        // 3. 숫자 + 불리언
+        console.log(num + bool); // 5, 불리언이 숫자로 암묵적 타입 변환이 일어나서 계산이 가능하다. false는 0으로, true는 1로 변환된다
+
+        // 4. 숫자 == 문자열
+        console.log(str == num); // false, == 연산자는 타입 변환을 수행하지만 값이 다르므로 false
+
+        // 5. 숫자 === 문자열
+        console.log(str === num); // false, === 연산자는 타입과 값이 모두 같아야 true
+
+        // 6. !불리언
+        console.log(!bool); // true, ! 연산자는 불리언 값을 반전시키므로 false가 true로 변환된다
+
+        // 7. !!문자열
+        console.log(!!str); // true, !! 연산자는 불리언 값을 반전시키는 연산자를 두 번 사용하여 원래의 불리언 값으로 변환한다. 빈 문자열이 아닌 '10'은 true로 평가된다
+
+        // null과 undefined 비교
+        console.log(null == undefined); // true
+        console.log(null === undefined); // false
     </script>
     
     

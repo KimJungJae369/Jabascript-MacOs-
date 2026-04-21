@@ -14,21 +14,23 @@
         - 표현식이 아닌 문 : 조건문은 값으로 평가되지 않으므로 표현식이 아닌 문입니다
         세미클론 : 문장의 끝을 나타내는 구분자
         표현식문과 아닌 문 : 표현식문은 하나의 값으로 평가되는 문장 표현식이 아닌 문은 하나의 값으로 평가되지 않는 문장입니다
+
+        표현식 문 
+        = 값이 나오면 '표현식' 만약 그 값을 단독으로 사용하면 '표현식문'이 된다
+        표현식 문의 단독 ex) 10 + 10; // 표현식문
+        = 표현식문은 세미콜론으로 끝납니다 
     -->
 
     <script>
-        // 어떤 로그인 API에서 결과를 받아서 처리하는 코드
-        let isLoggedIn = true;
-        let userName = 'John Doe';
+        // 표현식문
+        let num = 10 + 10;
+        num + 5; // 재할당 표현식
 
-        // ✅ 표현식 (값 생성)
-        let message = isLoggedIn ? `${userName}님 환영합니다` : '로그인 실패'; // 삼항 연산자는 표현식입니다. 조건에 따라 다른 문자열을 생성하여 message 변수에 할당합니다
-        console.log(message);
-
-        // ✅ 문 (추가 동작)
-        let lastLoginMessage;
-        if (isLoggedIn) { // 표현식이 아닌 문 : 조건문은 값으로 평가되지 않으므로 표현식이 아닌 문입니다
-            lastLoginMessage = '마지막 로그인 성공';
+        // 표현식이 아닌 문(if문)
+        if(num >= 10){
+            console.log('success');
+        }else{
+            console.log('fail');
         }
     </script>
     
