@@ -23,24 +23,20 @@
         = 호이스팅이 일어나지만, TDZ 때문에 오류가 발생한다
         = 객체의 내부 값, 배열 요소 변경은 가능하지만 변수에 대한 재할당은 불가능하다
         ex)
-        const user = { name: 'Alice' };
-        user.name = 'Bob'; // 객체 내부 값 변경은 가능
-        user = { name: 'Charlie' }; // 오류 발생, 변수에 대한 재할당은 불가능
+            const user = { name: 'Alice' };
+            user.name = 'Bob'; // 객체 내부 값 변경은 가능
+            user = { name: 'Charlie' }; // 오류 발생, 변수에 대한 재할당은 불가능
     -->
 
     <script>
+    let num;
+        console.log(num);
 
-        
-        let name = 'Alice';
+        num = 20;
+        console.log(num);
 
-        function printUserName(){
-            const localUserName = 'Bob';
-            console.log(localUserName);
-        }
-        printUserName();
-
-        name = 'Charlie';
-        console.log(name);
+        num = 30;
+        console.log(num);
     </script>
     
 </body>

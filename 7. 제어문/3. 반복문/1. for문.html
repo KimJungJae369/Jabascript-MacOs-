@@ -54,29 +54,17 @@
     -->
 
     <script>
-        for(let i = 0; i < 2; i++){
-            console.log(i); // 0,1
-        }
+        // 짝수만 합산해서 출력
+        let sum = 0;
 
-        // 역반복 for문
-        for(let i = 1; i >= 0; i--){
-            console.log(i); // 1,0
-        }
-
-        // 중첩 for문
-        for(let i = 1; i <= 6; i++){
-            for(let j = 1; j <= 6; j++){
-                if(i + j === 6) console.log(`[${i}, ${j}]`)
-                // i + j === 6인 경우에만 [i, j]를 출력하도록 조건문을 추가하여 주사위의 눈의 합이 6이 되는 모든 경우의 수를 출력
+        for(let i = 1; i <= 10; i++){
+            if(i % 2 !== 0){
+                continue;
+                
             }
+            sum += i;
         }
-        /*
-            [1, 5]
-            [2, 4]
-            [3, 3]
-            [4, 2]
-            [5, 1]
-        */
+        console.log(sum);
     </script>
     
 </body>

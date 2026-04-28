@@ -8,36 +8,27 @@
 <body>
 
     <script>
-        // 변수 3개 생성(문자, 숫자, 블리언) 
-        let str = '10';
-        let num = 5;
-        let bool = false;
+        let a = 2;
+        let b = 3;
 
-        // 콘솔에 출력
-        // 1 문자 + 숫자
-        console.log(str + num); // 105
+        // 쉼표 연산자 + 지수 + 그룹 + 산술 + 할당 + 부수효과
+        let result = (a += 1, b ** 2); 
+        console.log(result); // 9
+            // a += 1 👉 부수효과 (a 값이 바뀜)
+            // * , 👉 쉼표 연산자는 마지막 값 반환
+            // * 그래서 👉 b ** 2 = 9가 result에 들어감
+            // 지수 연산자는 부수효과가 없다
 
-        // 2. 문자 - 숫자
-        console.log(str - num); // 5, 문자열이 숫자로 암묵적 타입 변환이 일어나서 계산이 가능하다(- : 연산자는 문자열을 숫자로 변환한다)
+        // 논리 + 비교
+        let logic = (a > 2) && (b === 3);
+        console.log(logic); // true
 
-        // 3. 숫자 + 불리언
-        console.log(num + bool); // 5, 불리언이 숫자로 암묵적 타입 변환이 일어나서 계산이 가능하다. false는 0으로, true는 1로 변환된다
+        // typeof
+        console.log(typeof result); // number
 
-        // 4. 숫자 == 문자열
-        console.log(str == num); // false, == 연산자는 타입 변환을 수행하지만 값이 다르므로 false
-
-        // 5. 숫자 === 문자열
-        console.log(str === num); // false, === 연산자는 타입과 값이 모두 같아야 true
-
-        // 6. !불리언
-        console.log(!bool); // true, ! 연산자는 불리언 값을 반전시키므로 false가 true로 변환된다
-
-        // 7. !!문자열
-        console.log(!!str); // true, !! 연산자는 불리언 값을 반전시키는 연산자를 두 번 사용하여 원래의 불리언 값으로 변환한다. 빈 문자열이 아닌 '10'은 true로 평가된다
-
-        // null과 undefined 비교
-        console.log(null == undefined); // true
-        console.log(null === undefined); // false
+        // 삼항 연산자
+        let check = result > 5 ? "pass" : "fail";
+        console.log(check); // pass
     </script>
     
     

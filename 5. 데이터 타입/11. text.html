@@ -13,36 +13,28 @@
     -->
 
     <script>
-        // 사용자 객체 생성
-        const user = {
-            name : '홍길동',
-            age : 30,
-            isLoggedIn : true
-        } 
+        let userAge = 20;
+        console.log(`나이는 ${userAge}입니다`);
 
-        // 템플릿 리터럴 출력
-        console.log(`${user.name} - ${user.age}`); // 홍길동 - 30
+        let str = "hello"; // 문자열
+        let bool = true;
+        console.log(bool);
 
-        // 존재하지 않는 값 -> undefined
-        console.log(user.address); // undefined
+        let x;
+        console.log(x); // undefined
 
-        // 일부 값 -> null로 의도적 초기화
-        console.log(user.isLoggedIn); // true
-        user.isLoggedIn = null;
-        console.log(user.isLoggedIn); // null
+        let y = null;
+        console.log(y); // null
 
-        // 심벌을 사용해서 유일한 키 하나 추가
-        const userId = Symbol('id');
-        console.log(typeof userId); // symbol
-        user[userId] = 'user1';
-        console.log(user[userId]); // user1
+        let sym = Symbol('id');
+        console.log(typeof sym); // symbol
 
-        // 변수 하나 만들기 : 처음엔 숫자, 나중에  문자열로 변경(동적 타이핑)
-        let variable = 123;
-        console.log(variable); // 123
+        let obj = {};
+        console.log(typeof obj); // object
 
-        variable = '문자열로 변경';
-        console.log(variable); // 문자열로 변경
+        // 동적 타이핑
+        let dynamic = 10;
+        dynamic = "문자열";
     </script>
     
 </body>
