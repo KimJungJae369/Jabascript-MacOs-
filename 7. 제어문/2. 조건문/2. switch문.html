@@ -111,24 +111,26 @@
     -->
 
     <script>
-        let role = "admin";
-        let isActive = true;
+        const role = prompt("권한을 입력하세요 (admin, manager, user)"); 
 
-        if(!isActive){
-            console.log('비활성화된 사용자');
+        if(role === null || role.trim() === ''){
+            console.log('권한이 입력되지 않았습니다');
         }else{
             switch(role){
-                case 'admin' :
-                    console.log('관리자');
+                case 'admin' : 
+                    console.log('전체 접근 가능');
                     break;
-                case 'editor' :
-                    console.log('에디터');
+
+                case 'manager' : 
+                    console.log('일부 관리 기능 접근 가능');
                     break;
-                case 'subscriber' :
-                    console.log('구독자');
+
+                case 'user' : 
+                    console.log('일부 사용자 접근');
                     break;
-                default :
-                    console.log('알 수 없는 역할');
+
+                default : 
+                    console.log('권한이 없음');
             }
         }
     </script>

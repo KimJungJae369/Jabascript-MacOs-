@@ -19,24 +19,19 @@
     -->
 
     <script>
-        let count = 0;
+        let total = 0;
 
-        while(count < 3){
-            console.log(count); // 0,1,2
-            count++;
+        while (true) {
+            let input = prompt("숫자를 입력하세요 (0 입력 시 종료)");
+            const num = Number(input);
+            if (num === 0) {
+                break;
+            }else if(isNaN(num)) {
+                continue;
+            }
+            total += num;
         }
-
-
-        let count1 = 0;
-
-        while(true){
-            console.log(count1); // 0,1,2
-            count1++;
-            //  무한루프
-
-            // 무한루프 달출
-            if(count1 === 3) break;
-        }
+        console.log(`총합: ${total}`);
     </script>
     
 </body>

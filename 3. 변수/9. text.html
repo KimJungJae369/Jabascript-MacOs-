@@ -29,14 +29,14 @@
     -->
 
     <script>
-    let num;
-        console.log(num);
+        const userName = 'John'; // 재선언과 재할당이 불가능한 상수
+        let userAge = 31; // 재선언은 불가능하지만, 재할당이 가능한 변수
+ 
+        console.log(`Name : ${userName}, Age: ${userAge}`); // 초기값 출력
 
-        num = 20;
-        console.log(num);
+        userAge += 1; // userAge에 1을 더하여 재할당
 
-        num = 30;
-        console.log(num);
+        console.log(`Name : ${userName}, Age: ${userAge}`); // userName은 재할당이 불가능하므로 그대로 'John'이 출력되고, userAge는 1이 더해져서 32가 출력된다
     </script>
     
 </body>

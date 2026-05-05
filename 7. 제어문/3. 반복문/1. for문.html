@@ -54,17 +54,29 @@
     -->
 
     <script>
-        // 짝수만 합산해서 출력
-        let sum = 0;
+        /*
+            🎯 요구사항
+            1. for문을 사용해서 총합(total)을 구하라
+            2. 평균(average)을 구하라
+            3. 가격이 3000 이상인 값만 따로 합산 (highTotal)
+            4. 결과를 출력하라
+        */
+        const prices = [1000, 2000, 3000, 4000];
+        let total = 0;
+        let highTotal = 0;
 
-        for(let i = 1; i <= 10; i++){
-            if(i % 2 !== 0){
-                continue;
-                
+        for (let i = 0; i < prices.length; i++) {
+            total += prices[i]; // 총합 계산
+            if (prices[i] >= 3000) { 
+                highTotal += prices[i]; // 3000 이상인 값만 합산
             }
-            sum += i;
         }
-        console.log(sum);
+
+        const average = total / prices.length; // 평균 계산
+
+        console.log(`총합: ${total}`);
+        console.log(`평균: ${average}`);
+        console.log(`3000 이상 합: ${highTotal}`);
     </script>
     
 </body>
