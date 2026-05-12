@@ -14,51 +14,51 @@
 
     <script>
         /*
-            요구사항
-            1. id, age는 숫자 타입으로 변환
-            2. isActive는 불리언 타입으로 변환
-            3. name을 이용해
-                👉 "User John (101)" 형식의 템플릿 리터럴 문자열 생성
-            4. lastLogin이
-                * null이면 "No login history"
-                * 값이 있으면 그대로 출력
-            5. 존재하지 않는 값(undefined)이 들어올 경우를 대비한 처리 포함
-            6. 결과를 객체로 반환
+            1. 숫자 데이터 타입 사용
+            2. 문자열 데이터 타입 사용
+            3. 템플릿 리터럴(``)사용
+            4. 블리언 데이터 타입을 사용
+            5. undefined와 null의 차이를 보여줄 것
+            6. 객체 1개 만들기
+            7. 변수에 다른 타입의 값을 재할당해서 '동적 타이핑'을 보여줄 것
+
+            <출력 예시>
+            20
+            안녕하세요 김철수님
+            true
+            undefined
+            null
+            { name: '김철수' }
         */
-        const user = {
-            id: "101",
-            name: "John",
-            age: "20",
-            isActive: "true",
-            lastLogin: undefined
-        };
 
-        function transformUser(user) {
-            const id = Number(user.id);
-            const age = Number(user.age);
-            const isActive = user.isActive === "true";
+        let num = 20;
+        console.log(num);
 
-            const displayName = `User ${user.name} (${id})`;
+        let str = '김철수'
+        console.log(`안녕하세요 ${str}님`);
 
-            let lastLogin;
-            if (user.lastLogin === null) {
-                lastLogin = 'No login history';
-            } else if (user.lastLogin === undefined) {
-                lastLogin = 'Unknown';
-            } else {
-                lastLogin = user.lastLogin;
-            }
+        let bool = true;
+        console.log(bool);
 
-            return {
-                id,
-                age,
-                isActive,
-                displayName,
-                lastLogin
-            };
+        
+        console.log(unde);
+        var unde = 'Null';
+        unde = null;
+        console.log(unde);
+
+        function userName(){ // 함수 연산자
+            name : '홍길동';
+            age : 30;
+            gender : '남자'
         }
 
-        console.log(transformUser(user));
+        let user = { // 객체 연산자
+            name : '홍길동',
+            age : 30,
+            gender : '남자'
+        }
+        user.name = '김철수';
+        console.log(user.name);
     </script>
     
 </body>

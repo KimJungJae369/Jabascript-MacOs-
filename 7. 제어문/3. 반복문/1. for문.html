@@ -33,7 +33,7 @@
                 for(let i = 0(1); i < 2(2,5,8); i++(4,7)){
                     console.log(i); (3 : i = 0, 6 : i = 1)
                 }
-                1. for문을 실행하면 맨 먼저 변수 선언문 var i = 0;이 실행 변수 선언문은 '단 한번만 실행된다'
+                1. for문을 실행하면 맨 먼저 변수 선언문 let i = 0;이 실행 변수 선언문은 '단 한번만 실행된다'
                 2. 변수 선언문의 실행이 종료되면 조건식이 실행 현재 i 변수의 값은 0이므로 조건식의 평가 결과는 true
                 3. 조건식의 평가 결과가 true이므로 코드 블록이 실행 증감문으로 실행 흐름이 이동하는 것이 아니라 코드 블록으로 실행 흐름이 이동하는 것에 주의
                 4. 코드 블록이 실행이 종료되면 증감식 i++가 실행되어 i 변수의 값은 1로 증가
@@ -55,28 +55,20 @@
 
     <script>
         /*
-            🎯 요구사항
-            1. for문을 사용해서 총합(total)을 구하라
-            2. 평균(average)을 구하라
-            3. 가격이 3000 이상인 값만 따로 합산 (highTotal)
-            4. 결과를 출력하라
+            *
+            **
+            ***
+            ****
+            *****
+            => 출력
         */
-        const prices = [1000, 2000, 3000, 4000];
-        let total = 0;
-        let highTotal = 0;
 
-        for (let i = 0; i < prices.length; i++) {
-            total += prices[i]; // 총합 계산
-            if (prices[i] >= 3000) { 
-                highTotal += prices[i]; // 3000 이상인 값만 합산
+        for(let i = 0; i < 5; i++){
+            for(let n = 0; n <= i; n++){
+                document.write('*');
             }
+            document.write('<br>');
         }
-
-        const average = total / prices.length; // 평균 계산
-
-        console.log(`총합: ${total}`);
-        console.log(`평균: ${average}`);
-        console.log(`3000 이상 합: ${highTotal}`);
     </script>
     
 </body>

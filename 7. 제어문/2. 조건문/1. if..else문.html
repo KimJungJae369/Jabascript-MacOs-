@@ -55,22 +55,23 @@
 
 
     <script>
-        let input = prompt("값을 입력하세요");
+        /*
+            90점 이상 → "A등급"
+            80점 이상 → "B등급"
+            70점 이상 → "C등급"
+            그 외 → "F등급"
+        */
 
-        if (input === null || input.trim() === "") {
-        console.log('값이 없습니다');
-        } else {
-        const num = Number(input);
+        let userScore = Number(prompt('점수를 입력하세여'));
 
-        if (isNaN(num)) {
-            console.log('숫자가 아닙니다');
-        } else if (num === 0) {
-            console.log('0입니다');
-        } else if (num > 0) {
-            console.log('양수입니다');
-        } else {
-            console.log('음수입니다');
-        }
+        if(userScore >= 90){
+            alert('A등급');
+        }else if(userScore >= 80){
+            alert("B등급");
+        }else if(userScore >= 70){
+            alert("C등급");
+        }else{
+            alert('F등급');
         }
     </script>
     

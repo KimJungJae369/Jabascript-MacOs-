@@ -9,32 +9,72 @@
 
     <script>
         /*
-            🎯 요구사항
-            1. price를 숫자로 변환 후 할인 적용
-                👉 할인 가격 = price - (price * discount)
-            2. 회원이면 추가로 100원 할인 (논리 연산자 활용)
-            3. 포인트가 있으면 포인트 차감 (할당 연산자 활용)
-            4. 최종 가격이 0보다 작으면 0으로 처리 (삼항 연산자)
-            5. typeof로 최종 결과 타입 확인
-            6. 괄호를 사용해서 연산자 우선순위를 명확히 할 것
-            7. 아래 코드의 실행 결과를 예측하고 이유 설명 (부수효과 + 쉼표 연산자)
+            1. 산술 연산자 사용 (+, -, *, /, % 중 하나 이상)
+            2. 할당 연산자 사용 (=, += 등)
+            3. 비교 연산자 사용 (>, === 등)
+            4. 삼항 연산자 사용 (조건 ? 값1 : 값2)
+            5. 논리 연산자 사용 (&&, ||, !)
+            6. typeof 연산자 사용
+            7. 지수 연산자(**) 사용
+            8. 괄호 () 를 사용해서 우선순위를 바꿀 것
+            9. 부수 효과(side effect)가 발생하는 연산 포함
+                * 예: ++, --, =
+            10. 쉼표 연산자 , 를 1번 이상 사용할 것
         */
 
-        let price = "1000";  
-        let discount = 0.2;
-        let isMember = true;
-        let point = 100;
+        let num = 10 + 20;
+        console.log(num);
 
-        let finalPrice = Number(price) - (Number(price) * discount);
+        // 할당 연산자
+        let num2 = 10;
 
-        finalPrice -= isMember && 100; // isMember가 true이므로 100이 차감됨
-        finalPrice -= point;
+        num2 += 5;
+        num2 -= 3;
 
-        finalPrice = finalPrice < 0 ? 0 : finalPrice;
+        console.log(num2);
 
-        console.log(`최종 가격: ${finalPrice}`);
-        console.log(`타입: ${typeof finalPrice}`);
-        console.log((finalPrice, typeof finalPrice));
+        // 비교 연산자
+        let a = 10;
+        let b = 5;
+
+        console.log(a > b);
+
+        // 삼항 연산자
+        let x = 4;
+
+        let result = x % 2 === 0 ? '짝수' : '홀수';
+
+        console.log(result);
+
+        // 논리 연산자
+        let isStudent = true;
+        let hasBook = false;
+
+        console.log(isStudent && hasBook);
+
+        // typeof 연산자
+        console.log(typeof result);
+
+        // 지수 연산자
+        let power = 2 ** 3;
+
+        console.log(power);
+
+        // 괄호로 우선순위 변경
+        let priority = (10 + 5) * 2;
+
+        console.log(priority);
+
+        // 부수 효과
+        power++;
+        console.log('부수효과 : ',power);
+        ++power
+        console.log('부수효과 : ',power);
+
+        // 쉼표 연산자
+        let test = (1 + 2, 3 + 4);
+
+        console.log(test);
     </script>
     
     
