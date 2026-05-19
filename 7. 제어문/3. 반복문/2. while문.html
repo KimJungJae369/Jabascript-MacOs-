@@ -20,13 +20,47 @@
 
     <script>
         /*
-            1~5 출력
+            비밀번호를 맞출 때까지 계속 입력받는데,
+            3번 틀리면 계정을 잠그는 프로그램을 만들어보세요.
+
+            조건
+            * 정답 비밀번호는 "1234"
+            * 틀릴 때마다:
         */
 
-        let num = 1;
-        while(num < 6){
-            console.log(num);
-            num++;
+        let password = '1234';
+        let input = '';
+        let count = 0;
+
+        // while(count < 3){
+        //     input = prompt('비밀번호를 입력하세요');
+
+        //     if(input === password){
+        //         alert('로그인 성공');
+        //         break;
+        //     }else{
+        //         alert('비밀번호가 틀립니다');
+        //         count++;
+        //     }
+        // }
+
+        //     if(count === 3){
+        //         alert('계정이 잠겼습니다');
+        //     }
+
+        while(count < 3){
+            input = prompt('비밀번호 입력');
+
+            if(input === password){
+                alert('로그인 성공');
+                break;
+            }else{
+                alert('비밀번호가 틀립니다');
+                count++;
+            }
+        }
+        if(count === 3){
+            alert('계정이 잠겼습니다');
         }
     </script>
     

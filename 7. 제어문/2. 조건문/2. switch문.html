@@ -118,37 +118,45 @@
 
     <script>
         /*
-            음료 메뉴 번호를 입력하면 음료 이름을 출력하는 프로그램을 작성해봐.
-            조건:
-            1 → "콜라"
-            2 → "사이다"
-            3 → "주스"
-            그 외 → "없는 메뉴"
-
-            조건:
-            1. switch 문 사용할 것
-            2. case 사용할 것
-            3. break 사용할 것
-            4. default 사용할 
+            * "warrior" → "전사 선택"
+            * "mage" → "마법사 선택"
+            * "archer" → "궁수 선택"
+            * 그 외 값 → "없는 직업입니다"
         */
 
-        let userNum = Number(prompt('숫자를 입력하세요'));
+        // let job = "mage";
 
-        switch(userNum){
-            case 1 : 
-                alert('콜라');
-                break;
-            
-            case 2 : 
-                alert('사이다');
+        // switch(job){
+        //     case 'warrior' : 
+        //         alert('전사 선택');
+        //         break;
+        //     case 'mage' : 
+        //         alert('마법사 선택');
+        //         break;
+        //     case 'archer' : 
+        //         alert('궁수 선택');
+        //         break;
+
+        //     default : 
+        //         alert('없는 직업입니다');
+        // }
+
+        let job = "mage";
+        switch(job){
+            case 'warrior' : 
+                console.log('전사');
                 break;
 
-            case 3 : 
-                alert('주스');
+            case 'mage' : 
+                console.log('마법사');
+                break;
+
+            case 'archer' : 
+                console.log('궁수');
                 break;
 
             default : 
-                alert('없는 메뉴')
+                console.log('없는 직업입니다');
         }
     </script>
     

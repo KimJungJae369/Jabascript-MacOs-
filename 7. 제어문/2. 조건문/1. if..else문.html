@@ -56,22 +56,31 @@
 
     <script>
         /*
-            90점 이상 → "A등급"
-            80점 이상 → "B등급"
-            70점 이상 → "C등급"
-            그 외 → "F등급"
+            아이디가 "admin" 이고
+            비밀번호가 "1234"
         */
 
-        let userScore = Number(prompt('점수를 입력하세여'));
+        // if (id !== 'admin' && Number(password) !== 1234) {
+        //     alert('둘 다 틀립니다');
+        // } else if (id !== 'admin') {
+        //     alert('아이디가 틀립니다');
+        // } else if (Number(password) !== 1234) {
+        //     alert('비밀번호가 틀립니다');
+        // } else {
+        //     alert('로그인 성공');
+        // }
 
-        if(userScore >= 90){
-            alert('A등급');
-        }else if(userScore >= 80){
-            alert("B등급");
-        }else if(userScore >= 70){
-            alert("C등급");
+        let id = 'admin';
+        let password = Number(prompt('비밀번호 입력'));
+
+        if(id !== 'admin' && Number(password) !== 1234){
+            alert('둘 다 틀립니다');
+        }else if(id !== 'admin'){
+            alert('아이디가 틀립니다');
+        }else if(Number(password) !== 1234){
+            alert('비밀번호가 틀립니다');
         }else{
-            alert('F등급');
+            alert('로그인 성공')
         }
     </script>
     

@@ -9,72 +9,50 @@
 
     <script>
         /*
-            1. 산술 연산자 사용 (+, -, *, /, % 중 하나 이상)
-            2. 할당 연산자 사용 (=, += 등)
-            3. 비교 연산자 사용 (>, === 등)
-            4. 삼항 연산자 사용 (조건 ? 값1 : 값2)
-            5. 논리 연산자 사용 (&&, ||, !)
-            6. typeof 연산자 사용
-            7. 지수 연산자(**) 사용
-            8. 괄호 () 를 사용해서 우선순위를 바꿀 것
-            9. 부수 효과(side effect)가 발생하는 연산 포함
-                * 예: ++, --, =
-            10. 쉼표 연산자 , 를 1번 이상 사용할 것
+            1. 산술 연산자(+, -, *, / 중 하나 이상) 사용하기
+            2. 할당 연산자(=, += 등) 사용하기
+            3. 비교 연산자(>, === 등) 사용하기
+            4. 삼항 연산자 사용하기
+            5. 논리 연산자(&&, ||, !) 사용하기
+            6. typeof 연산자 사용하기
+            7. 지수 연산자(**) 사용하기
+            8. 그룹 연산자(()) 사용해서 우선순위 바꾸기
+            9. 쉼표 연산자(,) 사용하기
+            10. 부수 효과가 발생하는 코드 1개 작성하기
+            11. 마지막 주석으로:
+
+            * 연산자 우선순위
+            * 부수 효과
+                를 한 줄씩 설명하기
         */
 
-        let num = 10 + 20;
-        console.log(num);
+        let num = 10 + 5; // 산술 연산자
 
-        // 할당 연산자
-        let num2 = 10;
+        num += 5; // 할당 연산자 (부수 효과 발생)
 
-        num2 += 5;
-        num2 -= 3;
+        let compare = num >= 10; // 비교 연산자
 
-        console.log(num2);
+        let result = num % 2 === 0 ? '짝수' : '홀수'; // 삼항 연산자
 
-        // 비교 연산자
-        let a = 10;
-        let b = 5;
+        let logic = true && true; // 논리 연산자
 
-        console.log(a > b);
+        console.log(typeof num); // typeof 연산자
 
-        // 삼항 연산자
-        let x = 4;
+        let power = 2 ** 3; // 지수 연산자
 
-        let result = x % 2 === 0 ? '짝수' : '홀수';
+        let group = (5 + 3) * 2; // 그룹 연산자
 
+        let x, y, z;
+        x = 1, y = 2, z = 3; // 쉼표 연산자
+
+        console.log(compare);
         console.log(result);
-
-        // 논리 연산자
-        let isStudent = true;
-        let hasBook = false;
-
-        console.log(isStudent && hasBook);
-
-        // typeof 연산자
-        console.log(typeof result);
-
-        // 지수 연산자
-        let power = 2 ** 3;
-
+        console.log(logic);
         console.log(power);
+        console.log(group);
 
-        // 괄호로 우선순위 변경
-        let priority = (10 + 5) * 2;
-
-        console.log(priority);
-
-        // 부수 효과
-        power++;
-        console.log('부수효과 : ',power);
-        ++power
-        console.log('부수효과 : ',power);
-
-        // 쉼표 연산자
-        let test = (1 + 2, 3 + 4);
-
-        console.log(test);
+        // 연산자 우선순위 : () 그룹 연산자가 가장 먼저 계산된다
+        // 부수 효과 : 변수의 값이나 프로그램 상태를 변경하는 효과이다
     </script>
     
     

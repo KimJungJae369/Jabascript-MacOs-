@@ -14,51 +14,44 @@
 
     <script>
         /*
-            1. 숫자 데이터 타입 사용
-            2. 문자열 데이터 타입 사용
-            3. 템플릿 리터럴(``)사용
-            4. 블리언 데이터 타입을 사용
-            5. undefined와 null의 차이를 보여줄 것
-            6. 객체 1개 만들기
-            7. 변수에 다른 타입의 값을 재할당해서 '동적 타이핑'을 보여줄 것
+            1. 숫자 데이터 타입 변수 1개 만들기
+            2. 문자열 데이터 타입 변수 1개 만들기
+            3. 템플릿 리터럴(` `)을 사용해서 문자열 출력하기
+            4. 불리언(Boolean) 변수 1개 만들기
+            5. undefined 상태인 변수 1개 만들기
+            6. null 값을 가진 변수 1개 만들기
+            7. Symbol()을 사용한 변수 1개 만들기
+            8. 객체(Object) 변수 1개 만들기
+            9. typeof를 사용해서 데이터 타입을 3개 이상 출력하기
+            10. 마지막 주석으로:
 
-            <출력 예시>
-            20
-            안녕하세요 김철수님
-            true
-            undefined
-            null
-            { name: '김철수' }
+            * 데이터 타입이 왜 필요한지
+            * 동적 타이핑이 무엇인지
+                를 한 줄씩 설명하기
         */
 
-        let num = 20;
-        console.log(num);
-
-        let str = '김철수'
-        console.log(`안녕하세요 ${str}님`);
-
+        let num = 10;
+        let str = 'string';
+        let name = '홍길동';
+        let result = `안녕하세요 ${name}입니다`;
         let bool = true;
-        console.log(bool);
+        let undefi;
+        let nul = null;
+        let sym = Symbol('obj');
+        // 객체 변수
+        let user = { 
+            name: '홍길동', 
+            age: 20
+        };
 
-        
-        console.log(unde);
-        var unde = 'Null';
-        unde = null;
-        console.log(unde);
+        console.log(typeof bool);
+        console.log(typeof str);
+        console.log(typeof sym);
 
-        function userName(){ // 함수 연산자
-            name : '홍길동';
-            age : 30;
-            gender : '남자'
-        }
-
-        let user = { // 객체 연산자
-            name : '홍길동',
-            age : 30,
-            gender : '남자'
-        }
-        user.name = '김철수';
-        console.log(user.name);
+        /*
+            데이터 타입이 필요한 이유 : 데이터 타입은 값을 저장하고 참조할 때 메모리를 효율적으로 사용하기 위해 필요하다
+            동적 타이핑 : 자바스크립트는 변수 타입이 고정되지 않고 값에 따라 타입이 동적으로 변경된다
+        */
     </script>
     
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue문</title>
+</head>
+<body>
+
+    <!-- 
+        continue문
+        = 반복문의 코드 블록 실행을 현 지점에서 중단하고 반복문의 증감식으로 실행 흐름을 이동시킨다
+        = break 문처럼 반복문을 탈출하지는 않는다
+    -->
+
+    <script>
+        let string = 'Hello World';
+        let search = 'l';
+        let count = 0;
+
+        // continue 문을 사용하지 않으면 if문 내에 코드를 작성
+        for(let i = 0; i < string.length; i++){
+            if(string[i] === search){
+                count++;
+                // code
+                // code
+                // code
+            }
+        }
+        console.log(count);
+
+        for(let i = 0; i < string.length; i++){
+            if(string[i] !== search) continue;
+            count++;
+        }
+        console.log(count);
+    </script>
+    
+</body>
+</html>
