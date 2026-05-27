@@ -14,25 +14,36 @@
     -->
 
     <script>
-        let string = 'Hello World';
+        // let string = 'Hello World';
+        // let search = 'l';
+        // let count = 0;
+
+        // // continue 문을 사용하지 않으면 if문 내에 코드를 작성
+        // for(let i = 0; i < string.length; i++){
+        //     if(string[i] === search){
+        //         count++;
+        //         // code
+        //         // code
+        //         // code
+        //     }
+        // }
+        // console.log(count);
+
+        // // continue 문을 사용하면 if문 밖에 코드를 작성
+        // for(let i = 0; i < string.length; i++){
+        //     if(string[i] !== search) continue;
+        //     count++;
+        // }
+        // console.log(count);
+
+        let string = 'Hello World'
         let search = 'l';
         let count = 0;
 
-        // continue 문을 사용하지 않으면 if문 내에 코드를 작성
-        for(let i = 0; i < string.length; i++){
+        for(let i = 0; i <= string.length; i++){
             if(string[i] === search){
                 count++;
-                // code
-                // code
-                // code
             }
-        }
-        console.log(count);
-
-        // continue 문을 사용하면 if문 밖에 코드를 작성
-        for(let i = 0; i < string.length; i++){
-            if(string[i] !== search) continue;
-            count++;
         }
         console.log(count);
     </script>

@@ -16,35 +16,19 @@
 
     <script>
         /*
-            정답 숫자는 7 입니다.
-
-            사용자가 숫자를 계속 입력하다가
-            7을 맞히면 게임이 끝나는 프로그램을 만드세요.
+            1. do while 문 사용하기
+            2. password 변수 만들기
+            3. 처음 비밀번호는 틀린 값으로 시작하기
+            4. 반복
         */
-
-        let answer = 7;
-        let input;
-
-        // do {
-        //     input = Number(prompt("숫자를 입력하세요"));
-
-        //     if (input === answer) {
-        //         alert("정답입니다");
-        //     } else {
-        //         alert("틀렸습니다");
-        //     }
-
-        // } while (input !== answer);
+        let password = '1111';
 
         do{
-            input = Number(prompt('숫자입력'));
+            console.log('비밀번호 확인 중');
+            password = '1234';
+        } while (password !== '1234');
 
-            if(input === answer){
-                alert('정답')
-            }else{
-                alert('틀립니다');
-            }
-        }while(input !== answer);
+        console.log('로그인 성공');
     </script>
     
 </body>

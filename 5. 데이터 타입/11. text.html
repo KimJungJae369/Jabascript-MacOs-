@@ -10,48 +10,53 @@
     <!-- 
         isNaN : 값이 NaN인지 판별하는 함수
         - NaN : Not a Number의 약자로 숫자가 아님을 나타내는 특별한 값
+
+        데이터 타입이 필요한 이유 : 데이터 타입은 값을 저장하고 참조할 때 메모리를 효율적으로 사용하기 위해 필요하다
+        동적 타이핑 : 자바스크립트는 변수 타입이 고정되지 않고 값에 따라 타입이 동적으로 변경된다
     -->
 
     <script>
         /*
-            1. 숫자 데이터 타입 변수 1개 만들기
-            2. 문자열 데이터 타입 변수 1개 만들기
-            3. 템플릿 리터럴(` `)을 사용해서 문자열 출력하기
-            4. 불리언(Boolean) 변수 1개 만들기
+            1. 숫자(Number) 타입 변수 1개 만들기
+                * 예: 레벨, 점수 등
+            2. 문자열(String) 타입 변수 1개 만들기
+                * 예: 닉네임
+            3. 템플릿 리터럴(` `)을 사용해서
+                "OOO님의 레벨은 N입니다" 출력하기
+            4. 불리언(Boolean) 타입 변수 1개 만들기
+                * 예: 로그인 여부
             5. undefined 상태인 변수 1개 만들기
-            6. null 값을 가진 변수 1개 만들기
-            7. Symbol()을 사용한 변수 1개 만들기
-            8. 객체(Object) 변수 1개 만들기
-            9. typeof를 사용해서 데이터 타입을 3개 이상 출력하기
-            10. 마지막 주석으로:
-
-            * 데이터 타입이 왜 필요한지
-            * 동적 타이핑이 무엇인지
-                를 한 줄씩 설명하기
+            6. null 을 의도적으로 넣은 변수 1개 만들기
+                * 예: 선택한 캐릭터 없음
+            7. 객체(Object) 변수 1개 만들기
+                * 닉네임과 레벨 포함
+            8. 코드 마지막에
+                typeof 를 사용해서 데이터 타입 2개 이상 출력하기
+            9. 추가로:
+                * 자바스크립트가 동적 타이핑이라는 걸 보여주는 코드 1줄 넣기
+                    (같은 변수에 다른 타입 재할당)
         */
 
-        let num = 10;
-        let str = 'string';
-        let name = '홍길동';
-        let result = `안녕하세요 ${name}입니다`;
+        let num = 50;
+        let str = 'Orcle';
+        let result = `${str}님 레벨은 ${num}입니다`;
+        console.log(result);
+
         let bool = true;
-        let undefi;
+        let unde;
         let nul = null;
-        let sym = Symbol('obj');
-        // 객체 변수
-        let user = { 
-            name: '홍길동', 
-            age: 20
-        };
 
-        console.log(typeof bool);
-        console.log(typeof str);
-        console.log(typeof sym);
+        const Obj = {
+            name : 'Orcle',
+            LV : 50
+        }
 
-        /*
-            데이터 타입이 필요한 이유 : 데이터 타입은 값을 저장하고 참조할 때 메모리를 효율적으로 사용하기 위해 필요하다
-            동적 타이핑 : 자바스크립트는 변수 타입이 고정되지 않고 값에 따라 타입이 동적으로 변경된다
-        */
+        console.log(typeof unde);
+        console.log(typeof nul);
+
+        // 동적 타이핑
+        let data = 100;
+        data = '백';
     </script>
     
 </body>

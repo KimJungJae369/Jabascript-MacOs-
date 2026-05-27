@@ -118,45 +118,35 @@
 
     <script>
         /*
-            * "warrior" → "전사 선택"
-            * "mage" → "마법사 선택"
-            * "archer" → "궁수 선택"
-            * 그 외 값 → "없는 직업입니다"
+            1. job 변수 만들기
+            2. switch 문 사용하기
+            3. 번호에 따라 출력:
+                * 1 → "전사"
+                * 2 → "마법사"
+                * 3 → "궁수"
+            4. 해당 번호가 없으면:
+                * "잘못된 선택" 출력
+            5. break 반드시 사용하기
+            6. 마지막은 console.log() 로 출력하기
         */
 
-        // let job = "mage";
+        let job = 2;
 
-        // switch(job){
-        //     case 'warrior' : 
-        //         alert('전사 선택');
-        //         break;
-        //     case 'mage' : 
-        //         alert('마법사 선택');
-        //         break;
-        //     case 'archer' : 
-        //         alert('궁수 선택');
-        //         break;
-
-        //     default : 
-        //         alert('없는 직업입니다');
-        // }
-
-        let job = "mage";
         switch(job){
-            case 'warrior' : 
+            case 1 : 
                 console.log('전사');
                 break;
-
-            case 'mage' : 
+            
+            case 2 : 
                 console.log('마법사');
                 break;
 
-            case 'archer' : 
+            case 3 : 
                 console.log('궁수');
                 break;
 
             default : 
-                console.log('없는 직업입니다');
+                console.log('잘못된 선택');
         }
     </script>
     

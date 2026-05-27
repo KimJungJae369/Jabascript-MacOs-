@@ -56,31 +56,24 @@
 
     <script>
         /*
-            아이디가 "admin" 이고
-            비밀번호가 "1234"
+            1. time 변수 만들기
+            2. if 문 사용하기
+            3. 이용 시간이:
+                * 1시간 미만 → "기본 요금"
+                * 1시간 이상 5시간 미만 → "일반 요금제"
+                * 5시간 이상 → "정액 요금제"
+            4. else if 와 else 반드시 사용하기
+            5. 마지막에 console.log() 로 결과 출력하기
         */
 
-        // if (id !== 'admin' && Number(password) !== 1234) {
-        //     alert('둘 다 틀립니다');
-        // } else if (id !== 'admin') {
-        //     alert('아이디가 틀립니다');
-        // } else if (Number(password) !== 1234) {
-        //     alert('비밀번호가 틀립니다');
-        // } else {
-        //     alert('로그인 성공');
-        // }
+        let time = 6;
 
-        let id = 'admin';
-        let password = Number(prompt('비밀번호 입력'));
-
-        if(id !== 'admin' && Number(password) !== 1234){
-            alert('둘 다 틀립니다');
-        }else if(id !== 'admin'){
-            alert('아이디가 틀립니다');
-        }else if(Number(password) !== 1234){
-            alert('비밀번호가 틀립니다');
+        if(time < 1){
+            console.log('기본 요금');
+        }else if(time < 5){
+            console.log('일반 요금');
         }else{
-            alert('로그인 성공')
+            console.log('정액 요금제');
         }
     </script>
     
