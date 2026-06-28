@@ -56,34 +56,25 @@
 
     <script>
         /*
-            1. time 변수 만들기
-            2. if 문 사용하기
-            3. 이용 시간이:
-                * 1시간 미만 → "기본 요금"
-                * 1시간 이상 5시간 미만 → "일반 요금제"
-                * 5시간 이상 → "정액 요금제"
-            4. else if 와 else 반드시 사용하기
-            5. 마지막에 console.log() 로 결과 출력하기
+            1. price 변수에 12000을 저장한다.
+            2. isMember 변수에 true를 저장한다.
+            3. if문을 사용하여 아래 조건을 구현한다.
+                * 회원이고(isMember === true) price가 10000 이상이면 "10% 할인 대상"을 출력한다.
+                * 회원이 아니지만 price가 10000 이상이면 "5% 할인 대상"을 출력한다.
+                * 그 외에는 "할인 대상 아님"을 출력한다.
+            4. if, else if, else를 모두 사용한다.
+            5. 조건식에는 **논리 연산자(&&)**를 사용한다.
         */
 
-        // let time = 6;
+        let price = 12000;
+        let isMember = true;
 
-        // if(time < 1){
-        //     console.log('기본 요금');
-        // }else if(time < 5){
-        //     console.log('일반 요금');
-        // }else{
-        //     console.log('정액 요금제');
-        // }
-
-        let tmie = 6;
-
-        if(tmie < 1){
-            console.log('일반 요금');
-        }else if(tmie < 5){
-            console.log('기본 요금')
+        if(isMember === true && price >= 10000){
+            console.log('10% 할인대상');
+        }else if(isMember === false && price >= 10000){
+            console.log('5% 할인대상');
         }else{
-            console.log('정액 요금제')
+            console.log('할인 대상 아님');
         }
     </script>
     

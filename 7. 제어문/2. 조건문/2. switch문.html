@@ -118,35 +118,40 @@
 
     <script>
         /*
-            1. job 변수 만들기
-            2. switch 문 사용하기
-            3. 번호에 따라 출력:
-                * 1 → "전사"
-                * 2 → "마법사"
-                * 3 → "궁수"
-            4. 해당 번호가 없으면:
-                * "잘못된 선택" 출력
-            5. break 반드시 사용하기
-            6. 마지막은 console.log() 로 출력하기
+            1. menu 변수에 "아메리카노"를 저장한다.
+            2. switch문을 사용한다.
+            3. 메뉴에 따라 가격을 출력한다.
+                * "아메리카노" → 3000원
+                * "카페라떼" → 4000원
+                * "카푸치노" → 4500원
+                * "바닐라라떼" → 5000원
+            4. 위 메뉴가 아니라면 "판매하지 않는 메뉴입니다."를 출력한다.
+            5. 각 case에는 반드시 break를 사용한다.
+            6. default도 작성한다.
         */
 
-        let job = 2;
+        let menu = "아메리카노";
 
-        switch(job){
-            case 1 : 
-                console.log('전사');
-                break;
-            
-            case 2 : 
-                console.log('마법사');
-                break;
+        switch(menu){
+            case '아메리카노' : 
+                console.log('3000원');
+                break
 
-            case 3 : 
-                console.log('궁수');
-                break;
+            case '카페라떼' : 
+                console.log('4000원');
+                break
+
+
+            case '카푸치노' : 
+                console.log('4500원');
+                break
+
+            case '바닐라 라떼' : 
+                console.log('5000원');
+                break
 
             default : 
-                console.log('잘못된 선택');
+                console.log('판매하지 않는 메뉴입니다');
         }
     </script>
     
