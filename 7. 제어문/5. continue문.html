@@ -14,38 +14,22 @@
     -->
 
     <script>
-        // let string = 'Hello World';
-        // let search = 'l';
-        // let count = 0;
+        /*
+            1. for문을 사용한다.
+            2. 학생 이름을 하나씩 출력한다.
+            3. "박민수"는 결석했으므로 출력하지 않는다.
+            4. "박민수"를 만나면 continue를 사용해 다음 학생으로 넘어간다.
+        */
 
-        // // continue 문을 사용하지 않으면 if문 내에 코드를 작성
-        // for(let i = 0; i < string.length; i++){
-        //     if(string[i] === search){
-        //         count++;
-        //         // code
-        //         // code
-        //         // code
-        //     }
-        // }
-        // console.log(count);
+        let students = ["김철수", "이영희", "박민수", "최지은", "홍길동"];
 
-        // // continue 문을 사용하면 if문 밖에 코드를 작성
-        // for(let i = 0; i < string.length; i++){
-        //     if(string[i] !== search) continue;
-        //     count++;
-        // }
-        // console.log(count);
-
-        let string = 'Hello World'
-        let search = 'l';
-        let count = 0;
-
-        for(let i = 0; i <= string.length; i++){
-            if(string[i] === search){
-                count++;
+        for(let i = 0; i <= students.length; i++){
+            if(students[i] === '박민수'){
+                continue;
             }
+
+            console.log(students[i]);
         }
-        console.log(count);
     </script>
     
 </body>

@@ -16,24 +16,18 @@
 
     <script>
         /*
-            1. attack 변수를 1로 선언한다.
-            2. do...while문을 사용한다.
-            3. 반복할 때마다 아래와 같이 출력한다.
-                * 1번째 공격!
-                * 2번째 공격!
-                * …
-                * 5번째 공격!
-            4. 반복이 끝나면 "전투 종료"를 출력한다.
-            5. 템플릿 리터럴을 사용한다.
+            1. do...while문을 사용한다.
+            2. 현재 레벨을 출력한다.
+            3. 출력 후 level을 1 증가시킨다.
+            4. 레벨이 5가 될 때까지 반복한다.
         */
 
-        let attack = 1;
+        let level = 1;
 
         do{
-            console.log(`${attack}번째 공격`);
-            attack++;
-        }while(attack <= 5);
-        console.log('전투 종료');
+            console.log(`현재 레벨 : ${level}`);
+            level++;
+        }while(level <= 5);
     </script>
     
 </body>
