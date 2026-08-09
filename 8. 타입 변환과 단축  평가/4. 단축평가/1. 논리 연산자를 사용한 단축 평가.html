@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리 연산자를 사용한 단축 평가</title>
+</head>
+<body>
+
+    <!-- 
+        논리 연산자를 사용한 단축 평가
+        = 논리합(||) 또는 논리곱(&&) 연산자 표현식은 언제나 2개의 피연산자 중 어느 한쪽으로 평가된다
+
+            ex) 'Cat' && 'Dog' -> Dog
+            = 논리곱(&&) 연산자는 두 개의 피연산자가 모두 true로 평가될 때 true를 반환
+            = 논리곱 연산자는 좌항에서 우항으로 평가가 진행된다
+            = 첫 번째 피연산자 'Cat'은 Truthy 값이므로 true로 평가
+            = 하지만 이 시점까지는 위 표현식을 평가할 수 없다 두 번째 피연산자까지 평가해 보아야 위 표현식을 평가할 수 있다 다시 말해 피연산자가 위 논리곱 연산자 표현식의 평가 결과를 결정
+            = 이때 논리곱 연산자는 '논리 연산의 결과를 결정하는 두 번째 피연산자 즉 문자열 'Dog'를 그대로 반환'
+            = 논리합(||) 연산자도 논리곱(&&) 연산자와 동일하게 동작
+
+            ex) 'Cat' || 'Dog' -> Cat
+            = 논리합(||) 연산자는 두 개의 피연산자 중 하나만 true로 평가되어도 true를 반환
+            = 논리합 연산자도 좌항에서 우항으로 평가가 진행
+            = 첫 번째 피연산자 'Cat'은 Truthy 값이므로 true로 평가
+            = 이 시점에 두 번째 피연산자까지 평가해 보지 않아도 위 표현식을 평가할 수 있다 이때 논리합 연산자는 '논리 연산의 결과를 결정한 첫 번째 피연산자 즉 문자열 'Cat'을 그대로 반환'
+            = 논리곱(&&) 연산자와 논리합(||) 연산자는 이처럼 '논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 그대로 반환 이를 단축 평가'라고 한다 단축 평가는 표현식을 평가하는 도중에 평가 결과가 
+            확정된 경우 나머지 평가 과정을 생략하는 것을 말한다
+
+        <객체를 가리키기를 기대하는 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때>
+        = 객체는 '키(key)와 값(value)'으로 구성된 프로퍼티의 집합
+        = 만약 객체를 가리키기를 기대하는 변수의 값이 객체가 아니라 null 또는 undefined인 경우 객체의 프로퍼티를 참조하면 타입 에러가 발생
+        = 에러가 방생하면 프로그램이 강제 종료
+        = 이때 단축 평가를 사용하면 에러 발생을 방지할 수 있다
+
+        <함수 매개변수에 기본값을 설정할 때>
+        = 함수를 호출할 때 인수를 전달하지 않으면 매개변수에는 undefined가 할당
+        = 이떄 단축 평가를 사용해 매개변수의 기본값을 설정하면 undefined로 인해 발생할 수 있는 에러를 방지할 수 있다
+    -->
+
+    <script>
+        // 논리합(||)
+        'Cat' || 'Dog' // Cat
+        false || 'Dog' // Dog
+        'Cat' || false // Cat
+
+        // 논리곱(&&)
+        'Cat' && 'Dog' // Dog
+        false && 'Dog' // false
+        'Cat' && false // false
+
+
+        // 단축 평가를 사용하면 'if ~ else문'을 대체할 수 있다
+        let done = true;
+        let message = '';
+
+        // 주어진 조건이 true일 때 
+        if(done) message = '완료';
+        else message = '미완료';
+        console.log(message);
+
+        // if ~ else 문은 삼항 연산자로 대체 가능하다
+        // done이 true라면 message에 '완료'을 출력
+        message = done ? '완료' : '미완료';
+        console.log(message);
+
+
+        // 변수의 값이 객체가 아니라 null 또는 undefined인 경우
+        // let elem = null;
+        // let value = elem.value;
+
+        let elem = null;
+        let value = elem && elem.value;
+
+
+        // undefined로 인해 발생할 수 있는 에러를 방지
+        // function getStringLength(str){
+        //     str = str || '';
+        //     return str.length;
+        // }
+
+        // getStringLength(); // 0
+        // getStringLength('hi'); // 2
+
+        function getStringLength(str = ''){
+            str = str || '';
+            return str.length;
+        }
+
+        getStringLength(); // 0
+        getStringLength('hi'); // 2
+    </script>
+    
+</body>
+</html>
