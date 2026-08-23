@@ -56,17 +56,17 @@
         const decrease = document.querySelector('#decrease');
 
         let num = 0;
-        let result = function(){counter.innerHTML = num}
-
+        const result = function(){counter.innerHTML = num}
+        
         increase.onclick = function(){
             num++;
-            console.log('increase 클릭', num);
+            console.log('increase 클릭됨', num); 
             result();
         }
 
         decrease.onclick = function(){
             num--;
-            console.log('decrease 클릭', num);
+            console.log('increase 클릭됨', num); 
             result();
         }
     </script>

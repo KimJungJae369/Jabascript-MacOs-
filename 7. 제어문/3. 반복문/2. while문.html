@@ -19,22 +19,12 @@
     -->
 
     <script>
-        /*
-            1. while문을 사용한다.
-            2. input이 password와 같아질 때까지 반복한다.
-            3. 반복할 때마다 "비밀번호가 틀렸습니다."를 출력한다.
-            4. 반복문 안에서 input을 1234로 변경한다. (사용자가 다시 입력했다고 가정)
-            5. 반복문이 끝나면 "로그인 성공"을 출력한다.
-        */
+        let i = 1;
 
-        let password = 1234;
-        let input = 1111;
-
-        while(input !== password){
-            console.log('비밀번호가 틀렸습니다');
-            input = 1234;
+        while(i <= 5){
+            console.log(i);
+            i++;
         }
-        console.log('로그인 성공');
     </script>
     
 </body>

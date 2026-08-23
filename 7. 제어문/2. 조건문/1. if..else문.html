@@ -55,27 +55,17 @@
 
 
     <script>
-        /*
-            1. 회원(isMember === true)이고 구매 금액이 100,000원 이상이면
-                * "VIP 할인 대상입니다." 출력
-            2. 회원이고 구매 금액이 50,000원 이상 100,000원 미만이면
-                * "일반 할인 대상입니다." 출력
-            3. 회원이지만 구매 금액이 50,000원 미만이면
-                * "적립만 가능합니다." 출력
-            4. 회원이 아니면
-                * "회원만 할인 가능합니다." 출력
-        */
-        let purchaseAmount = 120000;
-        let isMember = true;
+        const price = 50000;
 
-        if (isMember && purchaseAmount >= 100000) {
-            console.log("VIP 할인 대상입니다.");
-        } else if (isMember && purchaseAmount >= 50000 && purchaseAmount < 100000) {
-            console.log("일반 할인 대상입니다.");
-        } else if (isMember && purchaseAmount < 50000) {
-            console.log("적립만 가능합니다.");
-        } else {
-            console.log("회원만 할인 가능합니다.");
+        if(price >= 100000){
+            console.log('할인 대상입니다');
+            console.log('10% 할인')
+        }else if(price >= 50000){
+            console.log('할인 대상입니다');
+            console.log('5% 할인')
+        }else{
+            console.log('할인 대상이 아닙니다');
+            console.log('할인 없음');
         }
     </script>
     

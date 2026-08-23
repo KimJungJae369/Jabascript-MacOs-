@@ -23,18 +23,45 @@
 
     <script>
         /*
-            1. 숫자 리터럴 10과 20을 사용해서 sum이라는 변수에 두 값을 더한 결과를 저장한다.
-            2. console.log(sum);으로 결과를 출력한다.
-            3. 코드 안에 표현식인 문을 2개 작성한다.
-            4. 코드 안에 표현식이 아닌 문을 1개 작성한다.
-            5. 모든 문 끝에 **세미콜론(;)**을 붙인다.
+            * 상품명: "맥북 프로"
+            * 가격: 2500000
+            * 수량: 2
+            * 할인율: 10
+
+            그리고 다음을 구현해봐.
+
+            1. 각각의 값을 변수에 저장한다.
+            2. 가격 × 수량을 계산해서 totalPrice 변수에 저장한다.
+            3. 전체 금액에서 10%를 할인한 금액을 finalPrice 변수에 저장한다.
+            4. console.log()를 사용해서 상품명과 최종 가격을 출력한다.
         */
 
-        let sum = 10 + 20; // 표현식이 아닌 문
-        console.log(sum);  // 표현식인 문
-        10 + 20; // 표현식인 문
-        sumn = 30; // 표현식인 문
-        
+            const productName = '맥북 프로';
+            // ↑ 전체는 문
+            // '맥북 프로'는 표현식
+
+            const price = 2500000;
+            // ↑ 전체는 문
+            // 2500000은 표현식
+
+            const stock = 2;
+            // ↑ 전체는 문
+            // 2는 표현식
+
+            const discount = 10;
+            // ↑ 전체는 문
+            // 10은 표현식
+
+            const totalPrice = price * stock;
+            // ↑ 전체는 문
+            // price * stock은 표현식
+
+            const finalPrice = totalPrice - (totalPrice * discount / 100);
+            // ↑ 전체는 문
+            // totalPrice - (...) 부분은 표현식
+
+            console.log(productName);
+            // ↑ 표현식 문
     </script>
     
 </body>

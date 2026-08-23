@@ -117,35 +117,27 @@
     -->
 
     <script>
-        /*
-            * "아메리카노" → "가격은 3,000원입니다."
-            * "라떼" → "가격은 4,000원입니다."
-            * "카푸치노" → "가격은 4,500원입니다."
-            * "에이드" → "가격은 5,000원입니다."
-            * 그 외의 메뉴 → "판매하지 않는 메뉴입니다."
-        */
-
-        let menu = '카페 라떼';
+        const menu = 2;
 
         switch(menu){
-            case '아메리카노' : 
-                alert('3,000원');
+            case 1 : 
+                console.log('아메리카노 : 3000원');
                 break;
 
-            case '카페 라떼' : 
-                alert('4,000원');
+            case 2 : 
+                console.log('카페라떼 : 4000원');
                 break;
 
-            case '카푸치노' : 
-                alert('4,500원');
+            case 3 : 
+                console.log('바닐라 라떼 : 4500원');
                 break;
 
-            case '에이드' : 
-                alert('5,000원');
+            case 4 : 
+                console.log('초코라떼 : 5000원');
                 break;
 
             default : 
-                alert('판매하지 않는 메뉴입니다');
+                console.log('없는 메뉴입니다')
         }
     </script>
     

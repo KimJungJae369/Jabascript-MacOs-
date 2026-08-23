@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옵셔널 체이닝 연산자</title>
+</head>
+<body>
+
+    <!-- 
+        옵셔널 체이닝 연산자
+        = ES11(ECMAScript2020)에서 도입곤 '옵셔널 체이닝 연산자(.?)'는 좌항의 피연산자가 null 또는 undefined인 경우 undefined를 반환하고 그렇지 않으면 '프로퍼티 참조'를 이어간다
+            프로퍼티 참조 : 객체 안에 있는 값을 꺼내서 사용하는 것
+
+        = '옵셔널 체이닝 연산자(.?)'는 객체를 가리키기를 기대하는 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때 유용
+        = 옵셔널 체이닝 연산자는 좌항 피연산자가 false로 평가되는 Falsy 값(false, undefined, null, 0, -0, NaN, '')이라도 null 또는 undefined가 아니면 우항의 프로퍼티 참조를 이어간다
+    -->
+    
+    <script>
+        // 1. 옵셔널 체이닝 연산자
+        let elem1 = null
+        // elem이 null 또는 undefined이면 undefined를 반환하고, 그렇지 않으면 우항의 프로퍼티 참조를 이어간다
+        let value1 = elem1?.value;
+        console.log(value1); // undefined
+
+
+        // 2. 옵셔널 체이닝 연산자 : 변수가 null 또는 undefined가 아닌지 확인하고 프로퍼티를 참조할 때
+        let elem2 = null
+        // elem Falsy 값이면 elem으로 평가되고 elem이 Truthy 값이면 elem.value로 평가
+        let value2 = elem2 && elem2.value;
+        console.log(value2); // null
+        
+        
+        // 3. 옵셔널 체이닝 연산자 : 0이나 ''가 객체로 평가 될때
+        let str1 = '';
+        // 문자열이 길이(lengtn)를 참조
+        // let length = str1 && str1.length;
+        // 문자열이 길이(lengtn)를 참조하지 못한다(콘솔에 빈 공간만 출력)
+        console.log(length); // ''
+
+
+        let str2 = '';
+        // 문자열의 길이를 참조한다 이때 좌항 피연산자가 false로 평가되는 Falsy 값이라도
+        // null 또는 undefined가 아니면 우항의 프로퍼티 참조를 이어간다
+        let length2 = str2?.length;
+        console.log(length2); // 0
+    </script>
+</body>
+</html>

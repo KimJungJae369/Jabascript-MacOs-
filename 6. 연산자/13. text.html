@@ -14,24 +14,45 @@
 
     <script>
         /*
-            1. num1에 10, num2에 5를 저장한다.
-            2. 산술 연산자를 사용해 두 수를 더한 결과를 result에 저장한다.
-            3. 할당 연산자(+=)를 사용해 result에 5를 더한다.
-            4. 비교 연산자를 사용해 result가 20과 같은지 출력한다.
-            5. 삼항 연산자를 사용해 result가 20 이상이면 "합격", 아니면 "불합격"을 출력한다.
-            6. 논리 연산자(&&)를 사용해 result가 20 이상이고 30 이하인지 출력한다.
-            7. typeof 연산자를 사용해 result의 타입을 출력한다.
+            * 상품 가격: 30000
+            * 구매 수량: 3
+            * 할인 금액: 10000
+
+            그리고 연산자를 이용해서 다음 값을 각각 구해봐.
+
+            1. 총 상품 금액 → price * quantity
+            2. 할인 적용 금액 → 총 상품 금액에서 할인 금액을 뺀 값
+            3. 상품 가격이 3만원 이상인지 → 비교 연산자 사용
+            4. 수량이 0인지 아닌지 → 비교 연산자 사용
+            5. price와 quantity가 둘 다 숫자인지 확인 → && 사용
+            6. price가 30000이거나 quantity가 3인지 확인 → || 사용
         */
 
-        let num1 = 10
-        let num2 = 5;
-        let result = num1 + num2;
-        result += 5;
-        console.log(result === 20);
+        const price = 3000;
+        const quantity = 3;
 
-        console.log(result == 20 ? '합격' : '불합격');
-        console.log(result >= 20 && result <= 30);
-        console.log(typeof result);
+        const amount = price * quantity;
+
+        const result = amount - (amount * 10 / 100);
+
+        const comparison = quantity === 0;
+
+        const result2 = quantity !== 0;
+
+        const type = typeof price === 'number' && typeof quantity === 'number';
+
+        const resultNum = price === 30000 || quantity === 3;
+
+        console.log(
+            price,
+            quantity,
+            amount,
+            result,
+            comparison,
+            result2,
+            type,
+            resultNum
+        );
     </script>
     
     
