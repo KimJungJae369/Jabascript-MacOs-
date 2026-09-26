@@ -14,45 +14,26 @@
 
     <script>
         /*
-            * 상품 가격: 30000
-            * 구매 수량: 3
-            * 할인 금액: 10000
+            상품 가격이 120000원이고, 수량이 2개야.
 
-            그리고 연산자를 이용해서 다음 값을 각각 구해봐.
+            다음 조건을 코드로 만들어봐.
 
-            1. 총 상품 금액 → price * quantity
-            2. 할인 적용 금액 → 총 상품 금액에서 할인 금액을 뺀 값
-            3. 상품 가격이 3만원 이상인지 → 비교 연산자 사용
-            4. 수량이 0인지 아닌지 → 비교 연산자 사용
-            5. price와 quantity가 둘 다 숫자인지 확인 → && 사용
-            6. price가 30000이거나 quantity가 3인지 확인 → || 사용
+            * 가격 × 수량이 200,000원 이상이면 "무료 배송"
+            * 200,000원 미만이면 "배송비 3,000원"
+
+            조건
+
+            1. price, quantity 변수를 만든다.
+            2. 산술 연산자로 총 상품 금액을 계산한다.
+            3. 비교 연산자를 사용해서 200,000원 이상인지 확인한다.
+            4. 삼항 연산자를 사용해서 결과를 출력한다.
         */
 
-        const price = 3000;
-        const quantity = 3;
-
-        const amount = price * quantity;
-
-        const result = amount - (amount * 10 / 100);
-
-        const comparison = quantity === 0;
-
-        const result2 = quantity !== 0;
-
-        const type = typeof price === 'number' && typeof quantity === 'number';
-
-        const resultNum = price === 30000 || quantity === 3;
-
-        console.log(
-            price,
-            quantity,
-            amount,
-            result,
-            comparison,
-            result2,
-            type,
-            resultNum
-        );
+        const price = 120000;
+        const quantity = 2;
+        const result = price * quantity;
+        const total = result >= 200000 ? '무료 배송' : '배송비 3,000원';
+        console.log(total);
     </script>
     
     

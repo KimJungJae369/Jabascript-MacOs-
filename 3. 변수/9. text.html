@@ -30,27 +30,27 @@
 
     <script>
         /*
-            상품명: "아이폰 17"
-            가격: 1500000
-            재고: 5
-            할인율: 10
-            판매 여부: true
+            메뉴: 아메리카노
+            가격: 4500원
+            수량: 3개
+            할인 금액 : 1000원
+            총 금액: 12500원
         */
 
-        const modal = '아이폰 17';
-        console.log(modal);
+        const menu = '아메리카노';
+        console.log(menu);
 
-        const price = 1500000
+        const price = 4500;
         console.log(price);
 
-        const stock = 5;
-        console.log(stock);
+        const quantity = 3;
+        console.log(quantity);
 
-        const discountPrice = price - (price * 10 / 100);
-        console.log(discountPrice);
+        const discount = 1000;
+        console.log(discount);
 
-        const whether = true;
-        console.log(whether);
+        const total = price * quantity - discount;
+        console.log(total);
     </script>
     
 </body>

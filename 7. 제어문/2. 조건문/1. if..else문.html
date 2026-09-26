@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if..else문</title>
 </head>
+
 <body>
 
     <!-- 
@@ -55,19 +57,20 @@
 
 
     <script>
-        const price = 50000;
+        const price = 150000;
+        let discount = 0;
 
-        if(price >= 100000){
-            console.log('할인 대상입니다');
-            console.log('10% 할인')
-        }else if(price >= 50000){
-            console.log('할인 대상입니다');
-            console.log('5% 할인')
-        }else{
-            console.log('할인 대상이 아닙니다');
-            console.log('할인 없음');
+        if (price >= 100000) {
+            discount = 10000;
+        } else {
+            discount = 0;
         }
+
+        console.log(`상품 가격 : ${price}`);
+        console.log(`할인 금액 : ${discount}`);
+        console.log(`최종 결제 금액 : ${price - discount}`);
     </script>
-    
+
 </body>
+
 </html>
